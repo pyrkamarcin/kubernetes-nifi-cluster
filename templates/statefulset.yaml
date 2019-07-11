@@ -61,29 +61,29 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: {{.storage.size}}
+      storageClassName: {{.storage.class}}
   - metadata:
       name: databaserepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: {{.storage.size}}
+      storageClassName: {{.storage.class}}
   - metadata:
       name: contentrepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: {{.storage.size}}
+      storageClassName: {{.storage.class}}
   - metadata:
       name: provenancerepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: {{.storage.size}}
+      storageClassName: {{.storage.class}}

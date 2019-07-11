@@ -23,7 +23,7 @@ _Secure SSL Cluster guide coming soon_
 
 from the zookeeper repo repo run:
 ```
-./build_environment.sh small
+./build_environment.sh default
 kubectl create -f deployment/
 ```
 

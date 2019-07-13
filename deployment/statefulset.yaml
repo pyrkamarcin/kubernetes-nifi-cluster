@@ -28,6 +28,10 @@ spec:
           command: ["/bin/sh","-c"]
           args: ['sed -e "s/^search/& $(dnsdomainname)/" /etc/resolv.conf > /tmp/resolv.conf;cat /tmp/resolv.conf  > /etc/resolv.conf; cd /opt/nifi && ./start_nifi.sh']
           image: xemuliam/nifi:latest
+          resources:
+            requests:
+              memory: 2Gi
+              cpu: 1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -61,29 +65,29 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: 25Gi
+      storageClassName: gp2
   - metadata:
       name: databaserepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: 25Gi
+      storageClassName: gp2
   - metadata:
       name: contentrepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: 25Gi
+      storageClassName: gp2
   - metadata:
       name: provenancerepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 5Gi
-      storageClassName: standard
+          storage: 25Gi
+      storageClassName: gp2

@@ -2,4 +2,6 @@ replicas: 3
 image: xemuliam/nifi:latest
 storage:
   class: gp2
-  size: 5Gi
+  size: 25Gi
+memoryrequest: "2Gi"
+cpurequest: "1"

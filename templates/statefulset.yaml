@@ -28,6 +28,10 @@ spec:
           command: ["/bin/sh","-c"]
           args: ['sed -e "s/^search/& $(dnsdomainname)/" /etc/resolv.conf > /tmp/resolv.conf;cat /tmp/resolv.conf  > /etc/resolv.conf; cd /opt/nifi && ./start_nifi.sh']
           image: {{.image}}
+          resources:
+            requests:
+              memory: {{.memoryrequest}}
+              cpu: {{.cpurequest}}
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

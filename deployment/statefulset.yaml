@@ -4,7 +4,7 @@ metadata:
   name: nifi
 spec:
   serviceName: nifi
-  replicas: 3
+  replicas: 1
   podManagementPolicy: Parallel
   updateStrategy:
     type: RollingUpdate
@@ -30,7 +30,7 @@ spec:
           image: xemuliam/nifi:latest
           resources:
             requests:
-              memory: 2Gi
+              memory: 1Gi
               cpu: 1
           imagePullPolicy: Always
           ports:
@@ -65,29 +65,29 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 25Gi
-      storageClassName: gp2
+          storage: 2Gi
+      storageClassName: hostpath
   - metadata:
       name: databaserepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 25Gi
-      storageClassName: gp2
+          storage: 2Gi
+      storageClassName: hostpath
   - metadata:
       name: contentrepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 25Gi
-      storageClassName: gp2
+          storage: 2Gi
+      storageClassName: hostpath
   - metadata:
       name: provenancerepository
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 25Gi
-      storageClassName: gp2
+          storage: 2Gi
+      storageClassName: hostpath

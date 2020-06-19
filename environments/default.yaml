@@ -3,5 +3,5 @@ image: xemuliam/nifi:latest
 storage:
   class: gp2
   size: 25Gi
-memoryrequest: "2Gi"
+memoryrequest: "1Gi"
 cpurequest: "1"
